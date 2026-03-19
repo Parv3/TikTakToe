@@ -19,12 +19,16 @@ import {
 // 1) Create a Firebase project, then paste your config here.
 // 2) Enable: Authentication → Sign-in method → Anonymous
 // 3) Create a Realtime Database (test mode is fine for demos)
-const FIREBASE_CONFIG = {
-  apiKey: "",
-  authDomain: "",
-  databaseURL: "",
-  projectId: "",
-  appId: "",
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDNW4HjAY_Ded2C8npLfrY2rw32GfW5Mcw",
+  authDomain: "tiktaktoe-e643e.firebaseapp.com",
+  databaseURL: "https://tiktaktoe-e643e-default-rtdb.firebaseio.com",
+  projectId: "tiktaktoe-e643e",
+  storageBucket: "tiktaktoe-e643e.firebasestorage.app",
+  messagingSenderId: "555487160813",
+  appId: "1:555487160813:web:624f6f504c653064031fe4",
+  measurementId: "G-SER1NNCTBL"
 };
 
 const el = (id) => document.getElementById(id);
