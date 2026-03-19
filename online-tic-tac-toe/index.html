@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Tic‑Tac‑Toe</title>
+    <meta name="description" content="Play Tic‑Tac‑Toe online with a friend using a room code." />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <div class="brand">
+          <div class="logo" aria-hidden="true">TTT</div>
+          <div>
+            <div class="title">Online Tic‑Tac‑Toe</div>
+            <div class="subtitle">Create a room, share a code, play in real time.</div>
+          </div>
+        </div>
+        <div class="pill" id="connPill" title="Connection status">
+          <span class="dot" id="connDot" aria-hidden="true"></span>
+          <span id="connText">Offline</span>
+        </div>
+      </header>
+
+      <section class="card" id="setupCard">
+        <h2>Start</h2>
+        <p class="muted">
+          Multiplayer uses Firebase (free tier). If Firebase isn’t configured, you can still play locally on this device.
+        </p>
+
+        <div class="grid2">
+          <div class="panel">
+            <h3>Create room</h3>
+            <button class="btn primary" id="createRoomBtn">Create</button>
+          </div>
+          <div class="panel">
+            <h3>Join room</h3>
+            <label class="label" for="roomCodeInput">Room code</label>
+            <div class="row">
+              <input id="roomCodeInput" class="input" placeholder="e.g. Q7K9P2" maxlength="12" autocomplete="off" />
+              <button class="btn" id="joinRoomBtn">Join</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="panel">
+          <h3>Local (same device)</h3>
+          <button class="btn" id="localBtn">Play locally</button>
+        </div>
+      </section>
+
+      <section class="card hidden" id="gameCard" aria-live="polite">
+        <div class="gameHeader">
+          <div>
+            <div class="status" id="statusText">Loading…</div>
+            <div class="meta">
+              <span class="mono" id="roomMeta"></span>
+              <button class="linkBtn" id="copyInviteBtn" type="button">Copy invite</button>
+            </div>
+          </div>
+          <div class="actions">
+            <button class="btn" id="resetBtn" type="button">Reset</button>
+            <button class="btn danger" id="leaveBtn" type="button">Leave</button>
+          </div>
+        </div>
+
+        <div class="board" id="board" role="grid" aria-label="Tic tac toe board">
+          <button class="cell" data-i="0" role="gridcell" aria-label="Cell 1"></button>
+          <button class="cell" data-i="1" role="gridcell" aria-label="Cell 2"></button>
+          <button class="cell" data-i="2" role="gridcell" aria-label="Cell 3"></button>
+          <button class="cell" data-i="3" role="gridcell" aria-label="Cell 4"></button>
+          <button class="cell" data-i="4" role="gridcell" aria-label="Cell 5"></button>
+          <button class="cell" data-i="5" role="gridcell" aria-label="Cell 6"></button>
+          <button class="cell" data-i="6" role="gridcell" aria-label="Cell 7"></button>
+          <button class="cell" data-i="7" role="gridcell" aria-label="Cell 8"></button>
+          <button class="cell" data-i="8" role="gridcell" aria-label="Cell 9"></button>
+        </div>
+
+        <div class="footNote muted" id="footNote"></div>
+      </section>
+
+      <footer class="footer muted">
+        <span>Built for GitHub Pages. No server required.</span>
+      </footer>
+    </main>
+
+    <dialog class="dialog" id="dialog">
+      <form method="dialog" class="dialogBody">
+        <div class="dialogTitle" id="dialogTitle">Notice</div>
+        <div class="dialogText" id="dialogText"></div>
+        <div class="dialogActions">
+          <button class="btn primary" value="ok">OK</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
